@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Goal } from '../api/types'
 import { RootState } from './store'
 
+
 export interface GoalsState {
   map: IdToGoal
   list: string[]
