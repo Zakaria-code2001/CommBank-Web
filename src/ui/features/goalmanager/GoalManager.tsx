@@ -18,6 +18,7 @@ import EmojiPicker from '../../components/EmojiPicker'
 
 
 
+
 type Props = { goal: Goal }
 type GoalIconContainerProps = { shouldShow: boolean }
 
@@ -100,6 +101,7 @@ export function GoalManager(props: Props) {
     dispatch(updateGoalRedux(updatedGoal))
 
     // TODO(update database)
+    updateGoalApi(props.goal.id, updatedGoal)
   }
 
 
@@ -174,6 +176,7 @@ export function GoalManager(props: Props) {
 
       <GoalIconContainer shouldShow={hasIcon()}>
         <GoalIcon icon={goal.icon ?? 'default-icon-path'} onClick={() => onIconSelect(goal.icon ?? 'default-icon-path')} />
+
       </GoalIconContainer>
 
     </GoalManagerContainer>
